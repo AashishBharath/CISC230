@@ -1,0 +1,141 @@
+
+public class Interpreter {
+    
+    protected FancyStack theStack;
+    
+    
+    public Interpreter(FancyStack stack) {
+        theStack = stack;
+    }
+    
+    public boolean isEmpty() {
+        if(theStack.isEmpty()==false) {
+            return false;
+        }else {
+            return true;
+        }
+    }
+    
+    public void clear() {
+        theStack.clear();
+    }
+    
+    public int size() {
+        return theStack.size();
+    }
+    public String tester(){
+        String temporaryHolder;
+        temporaryHolder = theStack.pop();
+        return temporaryHolder;
+    }
+        
+    public boolean eval(String operator) {
+        
+        //DOES WORK
+        if(operator.equals("OP_DUP")) {
+            String temporaryHolder;
+            temporaryHolder = theStack.pop();
+            theStack.push(temporaryHolder);
+            theStack.push(temporaryHolder);
+            return true;
+        }
+        
+        //DOES WORK
+        else if(operator.equals("OP_REVERSE")) {
+            String temporaryHolder;
+            String reversedWord = "";
+            
+            temporaryHolder = theStack.pop();
+            char[] wordArray = temporaryHolder.toCharArray();
+            for(int i = wordArray.length-1; i>=0; i--) {
+                reversedWord = reversedWord + wordArray[i];
+            }
+            theStack.push(reversedWord);
+            return true;
+        }
+        
+        //DOES WORK
+        else if(operator.equals("OP_CONCAT")) {
+            String firstWord;
+            String secondWord;
+            
+            secondWord = theStack.pop();
+            firstWord = theStack.pop();
+            
+            theStack.push(firstWord + secondWord);
+            return true;
+        }
+        
+        else if(operator.equals("OP_EQUAL")) {
+            String firstWord;
+            String secondWord;
+            
+            secondWord = theStack.pop();
+            firstWord = theStack.pop();
+            theStack.push(firstWord);
+            theStack.push(secondWord);
+            if(firstWord.equals(secondWord)) {
+                theStack.push("true");
+            }else {
+                theStack.push("false");
+            }
+            return true;
+        }
+        //DOESNT WORK
+
+        else if(operator.equals("OP_LOWER")) {
+            String temporaryHolder;
+            temporaryHolder = theStack.pop();
+            temporaryHolder.toLowerCase();
+            theStack.push(temporaryHolder);
+            return true;
+        }
+        //DOESNT WORK
+
+        else if(operator.equals("OP_UPPER")) {
+            String temporaryHolder;
+            temporaryHolder = theStack.pop();
+            temporaryHolder.toUpperCase();
+            theStack.push(temporaryHolder);
+            return true;
+        }
+        
+        //DOES WORK
+        else if(operator.equals("OP_DROP")) {
+            theStack.pop();
+            return true;
+        }
+        
+        //DOESNT WORK
+        else if(operator.equals("OP_NIP")) {
+            String firstInStack;
+            String secondInStack;
+            
+            firstInStack = theStack.pop();
+            secondInStack = theStack.pop();
+            
+            theStack.push(firstInStack);
+            return true;
+        }
+        
+        //WORKS
+        else if (operator.equals("OP_DEPTH")) {
+            theStack.push("" + theStack.size());
+            return true;
+        }
+        
+        //WORKS
+        else if (operator.equals("OP_FINISH")) {
+            return true;
+        }
+        
+       
+       return false; 
+    }
+    
+    @Override
+    public String toString() {
+        return theStack.toString();
+    }
+
+}

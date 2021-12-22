@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class DishItDriver {
+
+    public static void main(String[] args) {
+       /* 
+        FancyStack currentStack = new FancyStack();
+        Interpreter dishIt = new Interpreter(currentStack);
+        Scanner keyboard = new Scanner(System.in);
+        String userInput;
+        boolean keepEditing = true;
+        
+        
+        
+        
+        
+        while(keepEditing) {
+            System.out.print(">>");
+            userInput = keyboard.nextLine();
+            
+            
+            if(userInput.equals("OP_FINISH")) {
+                System.out.println(currentStack.pop());
+                currentStack.clear();
+                break;
+            }
+            else if(dishIt.eval(userInput) == false) {
+                currentStack.push(userInput);
+                dishIt = new Interpreter(currentStack);
+                System.out.println("Adding data to the stack...");
+                //TESTER
+                System.out.println(dishIt);
+            }else {
+                dishIt.eval(userInput);
+              //TESTER
+                System.out.println(dishIt);
+                
+            }
+        
+        }
+        
+        
+        */
+        
+        
+        
+        
+        //Testing FancyStack
+        
+        FancyStack stack = new FancyStack();
+        stack.push("hello");
+        stack.push("word");
+        stack.push("this");
+        stack.push("that");
+        stack.push("that");
+        stack.push("tha");
+        
+        Interpreter dishIt = new Interpreter(stack);
+        
+        dishIt.eval("OP_DUP");
+        System.out.println(dishIt);
+
+
+      
+        
+
+    }
+
+}

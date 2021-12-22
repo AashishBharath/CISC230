@@ -1,0 +1,16 @@
+
+public class PrimeCounter {
+    private int[] numbers;
+    private int lo;
+    private int hi;
+    private int answer;
+    
+    public PrimeCounter(int[] arr, int l,int h) {
+        numbers = arr;
+        lo = l;
+        hi = h;
+        answer = 0;
+    }
+    
+
+}

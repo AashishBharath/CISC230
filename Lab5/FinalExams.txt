@@ -1,0 +1,5 @@
+20211221,CISC 230 Final Exam,HIGH
+20211231,ECON Research Paper Due,HIGH
+20211214,Music 1st Discussion Due,MEDIUM
+20211218,Music last two discussions due,HIGH
+20211219,THEO Research Paper Due,HIGH

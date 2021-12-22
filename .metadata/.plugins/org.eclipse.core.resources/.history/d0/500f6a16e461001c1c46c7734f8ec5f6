@@ -1,0 +1,6 @@
+
+public class AverageHigh {
+    private String fileName;
+    
+
+}

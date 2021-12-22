@@ -1,0 +1,24 @@
+CISC 230 (Yilek) Lab 3 
+--------------------------------------
+
+
+Your Name: ____Aashish Bharath_____________________
+
+
+
+
+Ethics Statement:
+
+By adding my initials below I affirm that I completed all parts of this 
+assignment in accordance with the collaboration and academic dishonesty 
+policies described in the syllabus and lab policies document.  
+
+In particular, 
+1) I did not receive assistance from anyone other than the instructor (Dr. Yilek) and the official course teaching assistant, 
+2) I did not provide assistance to anyone else, and 
+3) I did not copy code from the Internet or get help on Internet sites like Chegg or similar. 
+
+Your initials __AB______
+
+
+
